@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% block expense %}
+<div style="padding: 10px;">
+  <h4>11月の収入</h4>
+  <div style="text-align: center;">
+    <h2 style="color: blue;">100,000</h2>
+  </div>
+</div>
+<div>
+  <div class="purchase_date" style="background-color: gainsboro;">
+    内訳
+  </div>
+</div>
+<ul>
+  <li class="purchase_thing" style="margin-top: 10px;display: flex;justify-content: space-around;">
+    <div>
+      バイト代:　藤田晃佑 
+    </div>
+    <div style="margin-left: 10%;">
+      100,000円
+    </div>
+    <div style="margin-left: auto;">
+      <a href="#" class="btn-flat-logo">
+        <i class="fa fa-chevron-right"></i> 詳細
+      </a>
+    </div>
+  </li>
+</ul>
+{% endblock %}
+
+{% block button %}
+  <a href="#" class="btn-circle-flat">
+    収入を追加
+  </a>
+{% endblock %}
