@@ -21,9 +21,9 @@ from . import settings_common, settings_dev
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/', include('allauth.urls')),
-    path('', include('topbudget.urls')),
-    # path('', include('user.urls')),
+    path('in/', include('topbudget.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('', include('user.urls')),
 ]
 
 urlpatterns += static(settings_common.MEDIA_URL, document_root=settings_dev.MEDIA_ROOT)
