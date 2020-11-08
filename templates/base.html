@@ -18,6 +18,9 @@
   <body>
     <header>
       <div style="display: flex; border-bottom: solid 1px;padding: 10px;justify-content: center;">
+        <div>
+          <a class="nav-link" href="{% url 'account_logout'%}">Log Out</a>
+        </div> 
         <div style="text-align: center; ">
           <h3 class="transaction">取引一覧</h3>
         </div>
@@ -26,9 +29,6 @@
             <i class="fa fa-caret-right"></i> 追加
           </a>
         </div>
-        <div>
-          <a class="nav-link" href="{% url 'account_logout'%}">Log Out</a>
-        </div> 
       </div> 
     </header>
     <section>
