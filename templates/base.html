@@ -25,13 +25,16 @@
           <a href="" class="btn-flat-simple">
             <i class="fa fa-caret-right"></i> 追加
           </a>
+        </div>
+        <div>
+          <a class="nav-link" href="{% url 'account_logout'%}">Log Out</a>
         </div> 
       </div> 
     </header>
     <section>
       <div style="display: flex; justify-content: space-around;padding: 10px;border-bottom: 1px solid;">
         <div>
-          <a href="/" class="btn-stitch">支出</a>
+          <a href="{% url 'topbudget:spending'%}" class="btn-stitch">支出</a>
         </div>
         <div>
           <a href="{% url 'topbudget:income'%}" class="btn-stitch">収入</a>
