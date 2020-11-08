@@ -6,12 +6,13 @@
   </div>
   <div class="the_day_purchase_history" style="padding: 10px 10px;">
     <ul>
+    {% for spending in spending_list %}
       <li class="purchase_thing" style="margin-top: 10px;display: flex;justify-content: space-around;">
         <div>
-          勘定科目：消耗品 
+          {{ spending.category }}
         </div>
         <div style="margin-left: 10%;">
-          592円 
+          {{ spending.cost }}
         </div>
         <div style="margin-left: auto;">
           <a href="{% url 'topbudget:spending_detail'%}" class="btn-flat-logo">
@@ -19,6 +20,9 @@
           </a>
         </div>
       </li>
+    {% empty %}
+      <li>情報がありません</li>
+    {% endfor %}
     </ul>
   </div>
 </div>
