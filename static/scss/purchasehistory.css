@@ -36,7 +36,7 @@
 .btn-square-little-rich:active { /*押したとき*/ border: solid 1px #03A9F4; box-shadow: none; text-shadow: none; }
 
 /*タブ切り替え全体のスタイル*/
-.tabs { margin-top: 50px; padding-bottom: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); width: 100%; margin: 0 auto; }
+.tabs { margin-top: 50px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); width: 100%; margin: 0 auto; }
 
 /*タブのスタイル*/
 .tab_item { width: calc(100%/3); height: 50px; border-bottom: 3px solid #5ab4bd; background-color: #d9d9d9; line-height: 50px; font-size: 16px; text-align: center; color: #565656; display: block; float: left; text-align: center; font-weight: bold; transition: all 0.2s ease; }
