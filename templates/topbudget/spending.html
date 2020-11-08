@@ -6,13 +6,13 @@
   </div>
   <div class="the_day_purchase_history" style="padding: 10px 10px;">
     <ul>
-    {% for spending in spending_list %}
+    {% for spending in spendings %}
       <li class="purchase_thing" style="margin-top: 10px;display: flex;justify-content: space-around;">
         <div>
           {{ spending.category }}
         </div>
         <div style="margin-left: 10%;">
-          {{ spending.cost }}
+          {{ spending.cost }}円
         </div>
         <div style="margin-left: auto;">
           <a href="{% url 'topbudget:spending_detail'%}" class="btn-flat-logo">
