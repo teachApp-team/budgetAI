@@ -1,0 +1,48 @@
+{% extends "base_spending.html" %}
+{% block variable %}
+<div class="tab_content_description">
+  <div class="purchase_date" style="background-color: gainsboro;">
+    2020年11月1日
+  </div>
+  <div class="the_day_purchase_history" style="padding: 10px 10px;">
+    <ul>
+    {% for spending in spendings %}
+      <li class="purchase_thing" style="margin-top: 10px;display: flex;justify-content: space-around;">
+        <div>
+          {{ spending.category }}
+        </div>
+        <div style="margin-left: 10%;">
+          {{ spending.cost }}円
+        </div>
+        <div style="margin-left: auto;">
+          <a href="{% url 'topbudget:spending_detail' spending.pk %}" class="btn-flat-logo">
+            <i class="fa fa-chevron-right"></i> 詳細
+          </a>
+        </div>
+      </li>
+    {% empty %}
+      <li>情報がありません</li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}
+
+{% block fixed %}
+  <div class="tab_content_description">
+    <p class="c-txtsp">固定費の内容がここに入ります</p>
+  </div>
+{% endblock %}
+
+
+{% block special %}
+  <div class="tab_content_description">
+    <p class="c-txtsp">特別費の内容がここに入ります</p>
+  </div>
+{% endblock %}
+
+{% block button %}
+<a href="{% url 'topbudget:spending_create'%}" class="btn-circle-flat">
+  支出を追加
+</a>
+{% endblock %}
