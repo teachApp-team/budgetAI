@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block expense %}
+<div>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table class = "table">
+      {{ form.as_table }}
+    </table>
+    <button class="btn btn-primary" type="submit">作成</button>
+  </form>
+  <div style="text-align: center;">
+    <a href="{% url 'topbudget:detect_recipt'%}" class="btn-stitch">レシートで認識</a>
+  </div>
+</div>
+{% endblock %}

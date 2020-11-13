@@ -6,7 +6,7 @@
       <span style="color: red;font-size: 30px;">支出</span>
     </div>
     <div>
-      <span style="color: red;font-size: 35px;">500</span>
+      <span style="color: red;font-size: 35px;">{{ object.cast }}</span>
       <span style="color: red;font-size: 20px;">円</span>
     </div>
   </div>
@@ -16,7 +16,7 @@
         カテゴリー
       </div>
       <div>
-        食費
+        {{ object.category }}
       </div>
     </div>
     <div style="display: flex;justify-content: space-between;padding: 15px 20%;margin-bottom:2px;background-color: white;">
@@ -24,7 +24,7 @@
         発生日
       </div>
       <div>
-        11/5
+        {{ object.date }}
       </div>
     </div>
     <div style="display: flex;justify-content: space-between;padding: 15px 20%;margin-bottom:2px;background-color: white;">
@@ -32,7 +32,7 @@
         決済手段
       </div>
       <div>
-        現金
+        {{ object.cash }}
       </div>
     </div>
     <div style="display: flex;justify-content: space-between;padding: 15px 20%;margin-bottom:2px;background-color: white;">
@@ -49,7 +49,7 @@
       </div>
       <div style="background-color: #CCFFFF;padding: 5px;">
         <p>
-          大学の飲み会
+          {{ object.comment }}
         </p>
       </div>
     </div>
