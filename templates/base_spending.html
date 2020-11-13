@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% block expense %}
+<div style="padding: 10px;">
+  <h4>11月の支出</h4>
+  <div style="text-align: center;">
+    <h2 style="color: red;">{{ sumcost }}</h2>
+  </div>
+</div>
+<div class="tabs">
+  <input id="all" type="radio" name="tab_item" checked>
+  <label class="tab_item" for="all">変動費</label>
+  <input id="programming" type="radio" name="tab_item">
+  <label class="tab_item" for="programming">固定費</label>
+  <input id="design" type="radio" name="tab_item">
+  <label class="tab_item" for="design">特別費</label>
+  <div class="tab_content" id="all_content">
+    {% block variable %}{% endblock %}
+  </div>
+  <div class="tab_content" id="programming_content">
+    {% block fixed %}{% endblock %}
+  </div>
+  <div class="tab_content" id="design_content">
+    {% block special %}{% endblock %}
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% load static %}
+{% load sass_tags %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% load fontawesome %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Budget AI</title>
+    <link rel="stylesheet" href="{% sass_src 'scss/purchasehistory.scss' %}">
+    {% fontawesome_stylesheet %}
+  </head>
+  <body>
+    <header>
+      <div style="display: flex; border-bottom: solid 1px;padding: 10px;justify-content: center;">
+        <div>
+          <a class="nav-link" href="{% url 'account_logout'%}">Log Out</a>
+        </div> 
+        <div style="text-align: center; ">
+          <h3 class="transaction">取引一覧</h3>
+        </div>
+        <div style="padding-left: 20px;">
+          <a href="" class="btn-flat-simple">
+            <i class="fa fa-caret-right"></i> 追加
+          </a>
+        </div>
+      </div> 
+    </header>
+    <section>
+      <div style="display: flex; justify-content: space-around;padding: 10px;border-bottom: 1px solid;">
+        <div>
+          <a href="{% url 'topbudget:spending'%}" class="btn-stitch">支出</a>
+        </div>
+        <div>
+          <a href="{% url 'topbudget:income'%}" class="btn-stitch">収入</a>
+        </div>
+        <div>
+          <a href="#" class="btn-stitch">貯金</a>
+        </div>
+      </div>
+      <content>
+        {% block expense %}{% endblock %}
+      </content>
+    </section>
+  </body>
+  <footer>
+    {% block button %}
+    {% endblock %}
+  </footer>
+</html>

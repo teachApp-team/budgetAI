@@ -1,0 +1,67 @@
+{% extends 'base.html'%}
+{% block expense %}
+<div>
+  <div style="display: flex;justify-content: space-between;margin: 20px 20%;">
+    <div>
+      <span style="color: red;font-size: 30px;">支出</span>
+    </div>
+    <div>
+      <span style="color: red;font-size: 35px;">{{ object.cast }}</span>
+      <span style="color: red;font-size: 20px;">円</span>
+    </div>
+  </div>
+  <div style="background-color: #C0C0C0;padding: 20px 10%;">
+    <div style="display: flex;justify-content: space-between;padding: 15px 20%;margin-bottom:2px;background-color: white;">
+      <div>
+        カテゴリー
+      </div>
+      <div>
+        {{ object.category }}
+      </div>
+    </div>
+    <div style="display: flex;justify-content: space-between;padding: 15px 20%;margin-bottom:2px;background-color: white;">
+      <div>
+        発生日
+      </div>
+      <div>
+        {{ object.date }}
+      </div>
+    </div>
+    <div style="display: flex;justify-content: space-between;padding: 15px 20%;margin-bottom:2px;background-color: white;">
+      <div>
+        決済手段
+      </div>
+      <div>
+        {{ object.cash }}
+      </div>
+    </div>
+    <div style="display: flex;justify-content: space-between;padding: 15px 20%;margin-bottom:2px;background-color: white;">
+      <div>
+        決済状況
+      </div>
+      <div>
+        決済済み
+      </div>
+    </div>
+    <div style="padding: 15px 15%;margin-bottom:2px;background-color: white;">
+      <div>
+        コメント
+      </div>
+      <div style="background-color: #CCFFFF;padding: 5px;">
+        <p>
+          {{ object.comment }}
+        </p>
+      </div>
+    </div>
+    <div style="padding: 15px 10%;background-color: white;">
+      <div>
+        レシートファイル
+      </div>
+    </div>
+    <div style="text-align: center;background-color: white;padding: 20px;">
+      <a href="#" class="btn-flat-border">編集</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
