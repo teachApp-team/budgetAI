@@ -9,10 +9,20 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class SpendingView(LoginRequiredMixin, TemplateView):
   model = Spending
   template_name = "topbudget/spending.html"
-
-  def get_queryset(self):
+  def get_context_data(self, **kwargs):
+      context = super().get_context_data(**kwargs)
+      spendings = Spending.objects.filter(user=self.request.user).order_by('-created_at') 
+      sumcost = 0
+      for s in spendings:
+        sumcost += s.cost
+      context['sumcost'] = sumcost
+      context['spendings'] = spendings
+      return context
+    
+  def get_queryset(self, request):
     spendings = Spending.objects.filter(user=self.request.user).order_by('-created_at')
-    return spendings
+    # return render(request, "topbudget/spending.html", {'name': name})
+
 
 class IncomeView(TemplateView):
   template_name = "topbudget/income.html"
