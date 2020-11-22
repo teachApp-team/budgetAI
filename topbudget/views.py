@@ -24,6 +24,7 @@ class SpendingView(LoginRequiredMixin, TemplateView):
     
   def get_queryset(self, request):
     spendings = Spending.objects.filter(user=self.request.user).order_by('-created_at')
+    return spendings
     # return render(request, "topbudget/spending.html", {'name': name})
 
 

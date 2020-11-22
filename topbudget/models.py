@@ -22,7 +22,7 @@ class Spending(models.Model):
   cash = models.BooleanField(verbose_name='現金決済')
   card = models.ForeignKey(Card, verbose_name='その他決済', on_delete=models.SET_NULL, null=True, blank=True)
   comment = models.CharField(verbose_name='コメント', max_length=40, null=True, blank=True)
-  picture = models.ImageField(upload_to='images/')
+  picture = models.ImageField(upload_to='images/', verbose_name='レシートを読み込む')
   created_at = models.DateTimeField(verbose_name='作成時', auto_now_add=True)
   updated_at = models.DateTimeField(verbose_name='更新日時', auto_now=True)
 
